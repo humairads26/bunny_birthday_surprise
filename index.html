@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Bunny</title>
+<meta name="description" content="A personal birthday surprise for Bunny.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-particle-density="rich">
+
+  <!-- The entire background atmosphere lives inside this wrapper so it
+       can fade in together as one "the website is awakening" moment,
+       instead of snapping in instantly. Populated by script.js. -->
+  <div id="welcome-atmosphere">
+    <div id="bg-light-rays" class="bg-light-rays" aria-hidden="true"></div>
+    <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+    <div id="bg-light-orbs" class="bg-light-orbs" aria-hidden="true"></div>
+    <div id="bg-balloons" class="bg-balloons" aria-hidden="true"></div>
+    <div id="bg-hearts" class="bg-hearts" aria-hidden="true"></div>
+  </div>
+
+  <!-- Soft ambient glow behind the hero content, fades in mid-sequence -->
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <main class="page">
+    <div class="content">
+      <p class="eyebrow" id="eyebrow-line">A Gift From Your Little Angel &#10024;</p>
+
+      <h1 class="hero-title glow-text">
+        <span id="typed-heading"></span><span class="typing-cursor" id="heading-cursor">|</span>
+      </h1>
+
+      <p class="hero-subtitle" id="typed-subtitle" aria-live="polite"></p>
+      <p class="hero-subtitle-2" id="subtitle-two">And this time, I want you to discover it yourself.</p>
+
+      <!-- Live countdown to 9 September -->
+      <div id="countdown-wrap">
+        <div class="countdown" id="countdown" role="timer" aria-label="Countdown to Bunny's birthday">
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="wish.html" class="btn-gold enter-btn" id="enter-btn" style="opacity:0; pointer-events:none;">
+        &#10024; Enter Your Surprise
+      </a>
+    </div>
+  </main>
+
+  <!-- script.js contains both the shared helpers used on every page
+       AND this welcome page's own logic (the full entrance sequence
+       and countdown) -->
+  <script src="script.js"></script>
+</body>
+</html>

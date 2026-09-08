@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>It's Cake Time, Bunny! — Bunny's Birthday</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cake.css">
+</head>
+<body data-particle-density="rich">
+
+  <div id="bg-light-rays" class="bg-light-rays" aria-hidden="true"></div>
+  <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+  <div id="bg-light-orbs" class="bg-light-orbs" aria-hidden="true"></div>
+  <div id="bg-balloons" class="bg-balloons" aria-hidden="true"></div>
+  <div id="bg-hearts" class="bg-hearts" aria-hidden="true"></div>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+
+  <a href="facts.html" class="back-nav">&larr; back</a>
+
+  <main class="page">
+    <div class="content">
+      <h1 class="cake-heading glow-text">&#127881; It's Cake Time, Bunny! &#127881;</h1>
+
+      <!--
+        CAKE IMAGE:
+        This is your exact uploaded cake image (images/cake.png), used
+        directly and unmodified as the cake — only its black background
+        has been made transparent (pixel-for-pixel identical otherwise)
+        so it blends into the page. The cake's own pixels are untouched.
+      -->
+      <div class="cake-stage" id="cake-stage">
+        <div class="cake-ambient-glow" aria-hidden="true"></div>
+        <div class="cake-spotlight" aria-hidden="true"></div>
+        <div class="cake-flash" id="cake-flash"></div>
+
+        <div class="cake" id="cake">
+          <img class="cake-image" src="images/cake.png" alt="Bunny's birthday cake — rich chocolate cake with gold candles, gold pearls and stars">
+          <div class="cake-candle-glow" aria-hidden="true"></div>
+        </div>
+
+        <div class="cake-shadow" aria-hidden="true"></div>
+      </div>
+
+      <p class="cake-caption">Baked with love, for Bunny.</p>
+
+      <button type="button" class="btn-gold" id="cut-btn">&#127856; Cut the Cake Bunny &#127856;</button>
+
+      <div class="cake-message" id="cake-message" aria-live="polite">
+        <p id="msg-wish">&#10024; Make a Wish...</p>
+        <p id="msg-wish-line">May every dream in your heart come true.</p>
+        <p id="msg-final" class="cake-final">Happy Birthday, Bunny! &#127881;</p>
+      </div>
+
+      <a href="gallery.html" class="btn-gold" id="cake-next">Let's Look at Some Memories <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="cake.js"></script>
+</body>
+</html>

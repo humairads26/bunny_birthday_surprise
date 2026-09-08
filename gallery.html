@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Few Moments — Bunny's Birthday</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="gallery.css">
+</head>
+<body data-particle-density="rich">
+
+  <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+  <div id="bg-light-orbs" class="bg-light-orbs" aria-hidden="true"></div>
+
+  <a href="cake.html" class="back-nav">&larr; back</a>
+
+  <main class="page">
+    <div class="content">
+      <h1 class="gallery-heading glow-text">&#128248; A Few Moments...</h1>
+      <p class="gallery-intro">Some memories deserve their own little space.</p>
+
+      <!--
+        PHOTO PLACEMENT:
+        These 7 photos live in the /images folder:
+          images/pic1.jpg  images/pic2.jpg  images/pic3.jpg
+          images/pic4.jpg  images/pic5.jpg  images/pic6.jpg
+          images/pic7.jpg
+        If a file is ever missing, this page shows an elegant gold-framed
+        placeholder instead of breaking, so it's safe to preview the site
+        even without the photos present.
+      -->
+      <div class="gallery-frame">
+      <div class="slideshow" id="slideshow" role="region" aria-label="Photo slideshow" aria-live="off">
+        <div class="slideshow-progress" aria-hidden="true"><span id="slideshow-progress-bar"></span></div>
+
+        <figure class="slide is-active" data-index="0">
+          <img src="images/pic1.jpg" alt="A memory of Bunny — photo 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory One</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">01 / 07</span>
+            <span class="memory-label">Before We Met</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Kabhi kabhi kisi ki purani tasveer dekh kar lagta hai&hellip; kaash us waqt bhi unki story ka ek chhota sa hissa hoti. &#10084;</span>
+          </figcaption>
+        </figure>
+
+        <figure class="slide" data-index="1">
+          <img src="images/pic2.jpg" alt="A memory of Bunny — photo 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory Two</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">02 / 07</span>
+            <span class="memory-label">Before I Knew You</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Ye woh waqt tha jab main aapko jaanti bhi nahi thi&hellip; aur mujhe kya pata tha ke ek din yehi insan meri life mein itni special jagah bana lega.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="slide" data-index="2">
+          <img src="images/pic3.jpg" alt="A memory of Bunny — photo 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory Three</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">03 / 07</span>
+            <span class="memory-label">Moments I Missed</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Aapki life ke in moments mein main nahi thi&hellip; lekin aaj in tasveeron ko dekh kar khushi hoti hai ke ab aapki kuch kahaniyan mujhe bhi pata hain. &#10024;</span>
+          </figcaption>
+        </figure>
+
+        <figure class="slide" data-index="3">
+          <img src="images/pic4.jpg" alt="A memory of Bunny — photo 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory Four</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">04 / 07</span>
+            <span class="memory-label">Not Years, Connection</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Kuch log years se nahi, connection se apne lagte hain&hellip; aur shayad hamara bond bhi kuch aisa hi hai.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="slide" data-index="4">
+          <img src="images/pic5.jpg" alt="A memory of Bunny — photo 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory Five</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">05 / 07</span>
+            <span class="memory-label">Some Bonds Defy Time</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Sirf kuch months mein koi insan itna familiar kaise ho sakta hai? Shayad kuch bonds ko time nahi, understanding define karti hai. &#128156;</span>
+          </figcaption>
+        </figure>
+
+        <figure class="slide" data-index="5">
+          <img src="images/pic6.jpg" alt="A memory of Bunny — photo 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory Six</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">06 / 07</span>
+            <span class="memory-label">Memories Yet To Come</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Main aapki purani memories ka hissa nahi thi&hellip; lekin I genuinely hope ke aane wali bohot si memories mein meri jagah bani rahe.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="slide slide-final" data-index="6">
+          <img src="images/pic7.jpg" alt="A memory of Bunny — photo 7" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="slide-placeholder" style="display:none;">
+            <span class="placeholder-frame">&#10022;</span>
+            <span class="placeholder-label">Memory Seven</span>
+          </div>
+          <figcaption class="memory-card">
+            <span class="memory-number">07 / 07</span>
+            <span class="memory-label">How You Became My Bunny</span>
+            <span class="memory-divider" aria-hidden="true"></span>
+            <span class="memory-caption">Maine aapko bachpan se nahi jaana&hellip; lekin in kuch months mein aap mere liye sirf ek person nahi rahe. Aap mere Bunny ban gaye. &#10084;</span>
+            <span class="memory-caption memory-caption-extra" id="memory-final-line-1">Five months ago, I didn't know I would call you my brother.</span>
+            <span class="memory-caption memory-caption-extra" id="memory-final-line-2">And today, I can't imagine this bond being any less special. &#10084;</span>
+          </figcaption>
+        </figure>
+
+      </div>
+      </div>
+
+      <div class="slideshow-controls">
+        <button type="button" class="slide-nav-btn" id="prev-slide" aria-label="Previous photo">&#10094;</button>
+        <div class="slide-dots" id="slide-dots"></div>
+        <button type="button" class="slide-nav-btn" id="play-pause" aria-label="Pause slideshow">&#10073;&#10073;</button>
+        <button type="button" class="slide-nav-btn" id="next-slide" aria-label="Next photo">&#10095;</button>
+      </div>
+
+      <p class="gallery-note">&#10024; Photos are added by Bunny's sister — see the project README.</p>
+
+      <div class="gallery-footer">
+        <p>Some memories become more precious simply because we lived them.</p>
+        <p>There are still a few things I want you to know...</p>
+        <a href="appreciation.html" class="btn-gold">&#128155; Discover Something Special <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>

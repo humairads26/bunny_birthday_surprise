@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Message Just For You — Bunny's Birthday</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hidden-message.css">
+</head>
+<body>
+
+  <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+  <div id="bg-light-orbs" class="bg-light-orbs" aria-hidden="true"></div>
+  <div id="bg-hearts" class="bg-hearts" aria-hidden="true"></div>
+
+  <a href="appreciation.html" class="back-nav">&larr; back</a>
+
+  <main class="page">
+    <div class="content">
+      <h1 class="hidden-heading glow-text">&#128140; A Message Just For You</h1>
+      <p class="hidden-subtitle">Open this when you're ready...</p>
+
+      <div class="envelope-stage">
+        <div class="envelope-scene-glow" id="scene-glow"></div>
+        <div class="envelope" id="envelope">
+          <div class="envelope-glow"></div>
+          <div class="envelope-letter"></div>
+          <div class="envelope-back"></div>
+          <div class="envelope-flap"></div>
+        </div>
+      </div>
+
+      <button type="button" class="btn-gold open-envelope-btn" id="open-envelope-btn">Open Only If You're Ready &#10084;</button>
+
+      <div class="glass-card letter-card" id="letter-card" aria-live="polite">
+        <p id="letter-text-1"></p><span class="typing-cursor" id="letter-cursor-1">|</span>
+        <p id="letter-text-2"></p><span class="typing-cursor" id="letter-cursor-2">|</span>
+
+        <blockquote class="emotional-quote" id="im-here-quote">
+          <p>&ldquo;I'm here. Batao kya hua.&rdquo;</p>
+        </blockquote>
+
+        <p id="letter-text-3"></p><span class="typing-cursor" id="letter-cursor-3">|</span>
+      </div>
+
+      <!--
+        PAIN KILLER / HUMAN MEDICINE REVEAL:
+        A quiet visual pause mid-letter — the surrounding glow softens
+        and these two lines appear on their own (as a viewport-fixed
+        overlay, so they're always centered on screen no matter how
+        far the reader has scrolled through the letter), then typing
+        resumes. No graphics, just the words themselves.
+      -->
+      <div class="pain-killer-reveal" id="pain-killer-reveal" aria-hidden="true">
+        <p id="pain-killer-line-1">Your Pain Killer &#128155;</p>
+        <p id="pain-killer-line-2">Your Human Medicine &#10024;</p>
+      </div>
+
+      <div class="hidden-footer">
+        <p id="and-now-line">And now...</p>
+        <p id="one-last-line">Your final surprise is waiting. &#127873;</p>
+        <a href="final-gift.html" class="btn-gold" id="hidden-next">Open Your Gift <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="hidden-message.js"></script>
+</body>
+</html>

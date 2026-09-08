@@ -1,0 +1,90 @@
+/* =====================================================================
+   wish.css — Page 2: Birthday Wish
+   Builds on top of style.css (link that file first).
+   ===================================================================== */
+
+.wish-heading{
+  font-size: clamp(1.9rem, 5.5vw, 2.8rem);
+  margin-bottom: 2rem;
+}
+
+.wish-card{
+  padding: 2.4rem 2rem;
+  text-align: left;
+  font-family: var(--font-script);
+  font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+  line-height: 1.9;
+  color: var(--white);
+  min-height: 260px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 40px rgba(255,215,0,0.08), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.wish-card p{ white-space: pre-wrap; }
+
+/* An elegant highlighted quote for the important promise line —
+   subtle gold accent border, soft glow, gentle fade-in. Not flashy,
+   just enough to make it stand out from the surrounding letter. */
+.emotional-quote{
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.4rem;
+  border: none;
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(90deg, rgba(255,215,0,0.09), transparent 75%);
+  border-radius: 0 12px 12px 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.emotional-quote.is-visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+.emotional-quote p{
+  margin: 0;
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.14rem;
+  line-height: 1.7;
+  color: var(--gold-soft);
+  text-shadow: 0 0 10px rgba(255,215,0,0.35);
+  white-space: normal;
+}
+
+.wish-teaser{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--gold-soft);
+  font-size: 1.05rem;
+  margin-top: 1.8rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+  text-shadow: 0 0 12px rgba(255,215,0,0.35);
+}
+.wish-teaser.is-visible{ opacity: 0.9; }
+.wish-teaser-2{
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-shadow: none;
+}
+
+.wish-actions{
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wish-actions .btn-gold{
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+.wish-actions .btn-gold.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 640px){
+  .wish-card{ padding: 1.8rem 1.3rem; }
+}

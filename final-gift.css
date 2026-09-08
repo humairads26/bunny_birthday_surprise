@@ -1,0 +1,348 @@
+/* =====================================================================
+   final-gift.css — The Luxury Birthday Certificate
+   An envelope opens to reveal a premium, ornate certificate (gold
+   double-border, corner flourishes, embossed feel), which is then
+   "stamped" with a gold seal before the Keep This Memory interaction
+   and grand finale.
+   ===================================================================== */
+
+.gift-heading{
+  font-size: clamp(1.7rem, 5.2vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+.gift-subtitle{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2.2rem;
+}
+
+/* ---------- Stage + ambient glow ---------- */
+.cert-stage{
+  position: relative;
+  min-height: 160px;
+  margin: 0 auto 1.6rem;
+}
+.cert-ambient-glow{
+  position: absolute;
+  left: 50%; top: 40%;
+  transform: translate(-50%, -50%);
+  width: min(480px, 92vw);
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,215,0,0.14), transparent 68%);
+  filter: blur(4px);
+  animation: certGlowBreathe 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes certGlowBreathe{
+  0%, 100%{ opacity: 0.7; }
+  50%{ opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce){
+  .cert-ambient-glow{ animation: none; opacity: 0.85; }
+}
+
+/* ---------- Closed envelope ---------- */
+.cert-envelope{
+  position: relative;
+  width: 190px;
+  height: 124px;
+  margin: 30px auto 0;
+  background: linear-gradient(160deg, #241a10 0%, #0d0805 100%);
+  border: 2px solid var(--gold-dim);
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 2px 6px rgba(255,215,0,0.08);
+  z-index: 2;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.cert-envelope.is-opening{
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 26px rgba(255,215,0,0.4);
+}
+.cert-envelope.is-hidden{
+  opacity: 0;
+  transform: scale(0.82) translateY(-8px);
+  pointer-events: none;
+}
+.envelope-flap{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 78px;
+  background: linear-gradient(160deg, #2c2013, #120c06);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-top: 2px solid var(--gold-dim);
+}
+.envelope-seal-icon{
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--gold-soft);
+  text-shadow: 0 0 12px rgba(255,215,0,0.5);
+  z-index: 1;
+}
+
+/* ---------- The certificate ---------- */
+.certificate{
+  position: relative;
+  width: min(360px, 88vw);
+  margin: -140px auto 0;
+  padding: 1.9rem 1.6rem 1.8rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,215,0,0.06), transparent 60%),
+    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.7),
+    0 0 40px rgba(255,215,0,0.12),
+    inset 0 0 0 1px rgba(255,215,0,0.15),
+    inset 0 0 30px rgba(255,215,0,0.04);
+  opacity: 0;
+  transform: scale(0.85) translateY(10px);
+  transition: opacity 1.1s ease, transform 1.1s cubic-bezier(.2,.8,.2,1), box-shadow 1.2s ease;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.certificate.is-visible{
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+.certificate.is-glowing{
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.7),
+    0 0 60px rgba(255,215,0,0.35),
+    inset 0 0 0 1px rgba(255,215,0,0.3),
+    inset 0 0 40px rgba(255,215,0,0.08);
+}
+.certificate::before{
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(255,215,0,0.35);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Gold ornamental corners */
+.cert-corner{
+  position: absolute;
+  width: 26px; height: 26px;
+  border: 2px solid var(--gold);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.cert-corner-tl{ top: 7px; left: 7px; border-right: none; border-bottom: none; }
+.cert-corner-tr{ top: 7px; right: 7px; border-left: none; border-bottom: none; }
+.cert-corner-bl{ bottom: 7px; left: 7px; border-right: none; border-top: none; }
+.cert-corner-br{ bottom: 7px; right: 7px; border-left: none; border-top: none; }
+
+.cert-title{
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 3.6vw, 1.3rem);
+  color: var(--gold-soft);
+  text-shadow: 0 0 12px rgba(255,215,0,0.4);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cert-divider{
+  width: 62%;
+  height: 1px;
+  margin: 1rem auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+  position: relative;
+  z-index: 1;
+}
+
+.cert-presented{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+  z-index: 1;
+}
+.cert-name{
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 14px rgba(255,255,255,0.15);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.cert-for{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--gold-soft);
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cert-list, .cert-awards{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.cert-list li{
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  line-height: 1.45;
+}
+.cert-list li:last-child{ margin-bottom: 0; }
+.cert-awards li{
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 0.42rem;
+}
+.cert-awards li:last-child{ margin-bottom: 0; }
+
+.cert-section-title{
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+  position: relative;
+  z-index: 1;
+}
+.cert-recognized{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--gold-soft);
+  font-size: 1.12rem;
+  text-shadow: 0 0 10px rgba(255,215,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+.cert-presented-by{
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+.cert-angel{
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--gold-soft);
+  text-shadow: 0 0 10px rgba(255,215,0,0.35);
+  margin-bottom: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+.cert-date{
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Gold seal stamp ---------- */
+.cert-gold-seal{
+  position: absolute;
+  bottom: 12px; right: 12px;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff2b8, var(--gold) 55%, #8a6408 100%);
+  border: 2px solid #fff2b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.5);
+  opacity: 0;
+  transform: scale(0) rotate(-18deg);
+  z-index: 2;
+}
+.cert-gold-seal span{
+  font-family: var(--font-display);
+  font-size: 0.46rem;
+  font-weight: 700;
+  color: #1a1206;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.cert-gold-seal.is-stamped{
+  animation: sealStamp 0.7s cubic-bezier(.2,.9,.3,1.4) forwards;
+}
+@keyframes sealStamp{
+  0%{ transform: scale(0) rotate(-18deg); opacity: 0; }
+  60%{ transform: scale(1.15) rotate(-14deg); opacity: 1; }
+  100%{ transform: scale(1) rotate(-12deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce){
+  .cert-gold-seal.is-stamped{ animation: none; opacity: 1; transform: scale(1) rotate(-12deg); }
+}
+
+/* ---------- Keep This Memory ---------- */
+.keep-memory-btn{
+  margin-top: 1.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+.keep-memory-btn.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+}
+.keep-message{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--gold-soft);
+  margin-top: 1.1rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+  text-shadow: 0 0 10px rgba(255,215,0,0.35);
+}
+.keep-message.is-visible{ opacity: 1; }
+
+/* ---------- Final screen ---------- */
+.final-screen{
+  margin-top: 2.6rem;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+.final-screen.is-visible{ opacity: 1; }
+.final-line-main{
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+  color: var(--gold-soft);
+  text-shadow: 0 0 20px var(--gold-glow);
+  margin-bottom: 0.5rem;
+}
+.final-line-sub{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+@media (max-width: 400px){
+  .certificate{ padding: 1.6rem 1.2rem 1.5rem; }
+  .cert-gold-seal{ width: 62px; height: 62px; bottom: 10px; right: 10px; }
+  .cert-gold-seal span{ font-size: 0.4rem; }
+}

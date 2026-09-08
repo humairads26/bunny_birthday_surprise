@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Well Do I Know You? — Bunny's Birthday</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="facts.css">
+</head>
+<body>
+
+  <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+
+  <a href="wish.html" class="back-nav">&larr; back</a>
+
+  <main class="page">
+    <div class="content">
+      <p class="eyebrow">A little quiz, just for fun</p>
+      <h1 class="facts-heading glow-text">How Well Do I Know You? &#128064;</h1>
+      <p class="facts-intro">Let's see how many little things I remember...</p>
+
+      <div class="facts-grid">
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#128420;</span>
+          <span class="fact-label">Favorite Color</span>
+          <span class="fact-value">Black</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#127925;</span>
+          <span class="fact-label">Your Music</span>
+          <span class="fact-value">Khamooshiyan &amp; emotional songs</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#127894;</span>
+          <span class="fact-label">A Dream You Once Had</span>
+          <span class="fact-value">Joining the Army</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#128014;</span>
+          <span class="fact-label">Something You Love</span>
+          <span class="fact-value">Horses</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#129504;</span>
+          <span class="fact-label">Your Personality</span>
+          <span class="fact-value">Deeply observant and intelligent</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#129309;</span>
+          <span class="fact-label">What Matters to You</span>
+          <span class="fact-value">Trust and loyalty</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#128106;</span>
+          <span class="fact-label">What You Value</span>
+          <span class="fact-value">Family and the people close to you</span>
+        </div>
+        <div class="glass-card fact-card reveal-on-scroll">
+          <span class="fact-icon">&#128081;</span>
+          <span class="fact-label">What I See In You</span>
+          <span class="fact-value">Strength, responsibility and leadership</span>
+        </div>
+      </div>
+
+      <!--
+        DISCOVERY SEQUENCE: two extra personal details revealed one at
+        a time after the main grid, each introduced by a short playful
+        line. Icons are an elegant gold chess-knight glyph (horse head)
+        and a hand-built gold SVG parrot silhouette — no emoji, no
+        cartoon graphics, matching the existing card style exactly.
+      -->
+      <div class="facts-extra" id="facts-extra">
+        <p class="facts-extra-line" id="extra-line-1">Wait... mujhe do aur cheezen yaad hain. &#128064;</p>
+
+        <div class="glass-card fact-card facts-extra-card" id="horse-card">
+          <span class="fact-icon fact-icon-glyph" aria-hidden="true">&#9822;</span>
+          <span class="fact-label">Your Dream Farmhouse &#128014;</span>
+          <span class="fact-value">Mujhe aapka wo dream yaad hai — apna farmhouse banana, horses rakhna aur ek aisi life enjoy karna jo aapne khud imagine ki hai. I genuinely hope ek din aapka ye dream reality ban jaye.</span>
+        </div>
+
+        <p class="facts-extra-line" id="extra-line-2">Aur haan... ye wali bhi. &#128524;</p>
+
+        <div class="glass-card fact-card facts-extra-card" id="parrot-card">
+          <span class="fact-icon fact-icon-svg" aria-hidden="true">
+            <svg viewBox="0 0 60 60" width="34" height="34">
+              <defs>
+                <linearGradient id="parrotIconGrad" x1="0" y1="0" x2="0.8" y2="1">
+                  <stop offset="0%" stop-color="#fff2b8"/>
+                  <stop offset="50%" stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#a97a10"/>
+                </linearGradient>
+              </defs>
+              <path d="M 22 34 C 14 42 8 50 4 58 C 10 56 14 52 17 48 Z" fill="url(#parrotIconGrad)"></path>
+              <path d="M 25 36 C 19 46 15 54 12 60 C 18 58 22 52 24 46 Z" fill="#a97a10" opacity="0.75"></path>
+              <ellipse cx="32" cy="30" rx="11" ry="15" fill="url(#parrotIconGrad)"></ellipse>
+              <path d="M 24 22 C 30 26 30 34 24 40 C 20 34 20 26 24 22 Z" fill="#7a5608" opacity="0.55"></path>
+              <circle cx="38" cy="14" r="8" fill="url(#parrotIconGrad)"></circle>
+              <path d="M 45 12 C 52 12 53 17 48 19 C 46 20 44 18 44 15 Z" fill="url(#parrotIconGrad)"></path>
+              <rect x="28" y="44" width="16" height="2.5" rx="1.2" fill="#a97a10" opacity="0.6"></rect>
+            </svg>
+          </span>
+          <span class="fact-label">The Little Things You Love &#129436;</span>
+          <span class="fact-value">Main aapki wo choti choti likes bhi yaad rakhti hon jo shayad aapko lagta ho ke koi notice nahi karta. Yes Bunny, parrots bhi unhi little things mein se ek hain.</span>
+        </div>
+
+        <p class="facts-extra-line" id="extra-line-3">See? Main actually attention deti hon. &#10084;&#65039;</p>
+      </div>
+
+      <div class="facts-footer" id="facts-footer">
+        <p id="facts-line-1" class="reveal-on-scroll">And yes... I remember more than you think. &#128524;</p>
+        <p id="facts-line-2">Want to see how much?</p>
+        <a href="cake.html" class="btn-gold" id="facts-next">Show Me More <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="facts.js"></script>
+</body>
+</html>

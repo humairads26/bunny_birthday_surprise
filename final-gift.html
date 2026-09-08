@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Gift — Bunny's Birthday</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="final-gift.css">
+</head>
+<body>
+
+  <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+  <div id="bg-light-orbs" class="bg-light-orbs" aria-hidden="true"></div>
+  <div id="bg-balloons" class="bg-balloons" aria-hidden="true"></div>
+  <div id="bg-hearts" class="bg-hearts" aria-hidden="true"></div>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+
+  <a href="hidden-message.html" class="back-nav">&larr; back</a>
+
+  <main class="page">
+    <div class="content">
+      <h1 class="gift-heading glow-text">&#127873; One Last Gift For You... </h1>
+      <p class="gift-subtitle">Open Your Birthday Gift &#10024;</p>
+
+      <!--
+        LUXURY BIRTHDAY CERTIFICATE
+        A closed envelope opens to reveal a premium certificate, which
+        is then "stamped" with a gold seal, and can be kept via the
+        "Keep This Memory" interaction before the grand finale.
+      -->
+      <div class="cert-stage" id="cert-stage">
+        <div class="cert-ambient-glow" aria-hidden="true"></div>
+
+        <div class="cert-envelope" id="cert-envelope">
+          <div class="envelope-flap" aria-hidden="true"></div>
+          <span class="envelope-seal-icon" aria-hidden="true">&#127942;</span>
+        </div>
+
+        <div class="certificate" id="certificate">
+          <span class="cert-corner cert-corner-tl" aria-hidden="true"></span>
+          <span class="cert-corner cert-corner-tr" aria-hidden="true"></span>
+          <span class="cert-corner cert-corner-bl" aria-hidden="true"></span>
+          <span class="cert-corner cert-corner-br" aria-hidden="true"></span>
+
+          <div class="cert-gold-seal" id="cert-gold-seal" aria-hidden="true">
+            <span>Bunny<br>Special Brother<br>2026</span>
+          </div>
+
+          <p class="cert-title">The Official Bunny Certificate &#127942;</p>
+
+          <div class="cert-divider" aria-hidden="true"></div>
+
+          <p class="cert-presented">Presented to</p>
+          <p class="cert-name">BUNNY</p>
+
+          <p class="cert-for">For being:</p>
+          <ul class="cert-list">
+            <li>&#10084; An irreplaceable brother</li>
+            <li>&#129309; A trusted friend</li>
+            <li>&#128737; Someone who is always there when needed</li>
+            <li>&#128155; Someone who genuinely cares about the people close to him</li>
+            <li>&#127775; Someone who has earned a very special place in my life</li>
+          </ul>
+
+          <div class="cert-divider" aria-hidden="true"></div>
+
+          <p class="cert-section-title">Special Awards</p>
+          <ul class="cert-awards">
+            <li>&#127942; The Always-There Award</li>
+            <li>&#128737; The Protector Award</li>
+            <li>&#129309; The Trust Award</li>
+            <li>&#10084; The Special Brother Award</li>
+          </ul>
+
+          <div class="cert-divider" aria-hidden="true"></div>
+
+          <p class="cert-section-title">Officially Recognized As</p>
+          <p class="cert-recognized">&ldquo;My Special Brother &amp; Friend&rdquo;</p>
+
+          <div class="cert-divider" aria-hidden="true"></div>
+
+          <p class="cert-presented-by">Presented with love by</p>
+          <p class="cert-angel">Your Little Angel &#129725;</p>
+          <p class="cert-date">Date: 09 September 2026</p>
+        </div>
+      </div>
+
+      <button type="button" class="btn-gold" id="open-cert-btn">Open Certificate</button>
+
+      <button type="button" class="btn-gold keep-memory-btn" id="keep-memory-btn">Keep This Memory &#10024;</button>
+      <p class="keep-message" id="keep-message">Some memories are worth keeping. &#10084;</p>
+
+      <div class="final-screen" id="final-screen">
+        <p class="final-line-main">Happy Birthday, Bunny &#10084;</p>
+        <p class="final-line-sub">Your Little Angel &#129725;</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="final-gift.js"></script>
+</body>
+</html>

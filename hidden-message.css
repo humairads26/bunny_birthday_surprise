@@ -1,0 +1,237 @@
+/* =====================================================================
+   hidden-message.css — Page 8: Hidden Message
+   ===================================================================== */
+
+.hidden-heading{
+  font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+  margin-bottom: 0.6rem;
+}
+.hidden-subtitle{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2.6rem;
+}
+
+.envelope-stage{
+  position: relative;
+  width: 260px;
+  height: 170px;
+  margin: 0 auto 2rem;
+  perspective: 1000px;
+}
+
+/* Ambient cinematic glow behind the whole scene, independent of the
+   envelope's own glow so the surrounding darkness feels alive */
+.envelope-scene-glow{
+  position: absolute;
+  inset: -60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,215,0,0.14), transparent 70%);
+  opacity: 0.6;
+  animation: sceneBreathe 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes sceneBreathe{
+  0%, 100%{ opacity: 0.35; transform: scale(1); }
+  50%{ opacity: 0.65; transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce){
+  .envelope-scene-glow{ animation: none; opacity: 0.5; }
+}
+
+.envelope{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: envelopeIdleFloat 4.5s ease-in-out infinite;
+}
+.envelope.is-open{ animation: none; }
+@keyframes envelopeIdleFloat{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .envelope{ animation: none; }
+}
+
+.envelope-back{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #17110a, #0c0906);
+  border: 1px solid var(--gold-dim);
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.envelope-flap{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 90px;
+  background: linear-gradient(160deg, #241a0f, #120d08);
+  clip-path: polygon(0 0, 100% 0, 50% 90%);
+  border: 1px solid var(--gold-dim);
+  border-bottom: none;
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
+  z-index: 3;
+}
+.envelope.is-open .envelope-flap{
+  transform: rotateX(180deg);
+}
+
+.envelope-glow{
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,215,0,0.55), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 1;
+}
+.envelope.is-open .envelope-glow{ opacity: 1; }
+
+.envelope-letter{
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 6%;
+  height: 0%;
+  background: linear-gradient(180deg, #0d0d0d, #050505);
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 2;
+  transition: height 1s cubic-bezier(.2,.8,.2,1), bottom 1s cubic-bezier(.2,.8,.2,1);
+}
+.envelope.is-open .envelope-letter{
+  height: 70%;
+  bottom: 40%;
+}
+
+.open-envelope-btn{ margin-bottom: 1rem; }
+
+.letter-card{
+  margin-top: 1.4rem;
+  padding: 2.2rem 1.8rem;
+  text-align: left;
+  font-family: var(--font-script);
+  font-size: clamp(1rem, 2.6vw, 1.22rem);
+  line-height: 1.9;
+  min-height: 220px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.9s ease, transform 0.9s ease, box-shadow 1.4s ease, border-color 1.4s ease;
+  position: relative;
+}
+.letter-card p{ white-space: pre-wrap; }
+
+/* An elegant highlighted quote for "I'm here. Batao kya hua." — same
+   treatment as the wish page's promise quote, kept consistent. */
+.emotional-quote{
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.4rem;
+  border: none;
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(90deg, rgba(255,215,0,0.09), transparent 75%);
+  border-radius: 0 12px 12px 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.emotional-quote.is-visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+.emotional-quote p{
+  margin: 0;
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 1.14rem;
+  line-height: 1.7;
+  color: var(--gold-soft);
+  text-shadow: 0 0 10px rgba(255,215,0,0.35);
+  white-space: normal;
+}
+
+/* Subtle inline gold emphasis for "my pain killer" / "my human
+   medicine" within the letter text — not a card, just quiet emphasis. */
+.phrase-highlight{
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255,215,0,0.4);
+}
+.letter-card.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* A brief, quieter moment mid-letter — the card's glow softens and
+   darkens slightly while the pain-killer/human-medicine words appear */
+.letter-card.is-hushed{
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border-color: rgba(255,215,0,0.08);
+}
+.letter-card.is-hushed #letter-text,
+.letter-card.is-hushed #letter-cursor{
+  opacity: 0.35;
+  transition: opacity 1.2s ease;
+}
+
+.pain-killer-reveal{
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background: rgba(5,5,5,0.6);
+}
+.pain-killer-reveal.is-active{ opacity: 1; }
+.pain-killer-reveal p{
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: clamp(1.15rem, 3.4vw, 1.5rem);
+  color: var(--gold-soft);
+  text-shadow: 0 0 16px rgba(255,215,0,0.5);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.pain-killer-reveal p.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden-footer{
+  margin-top: 2.4rem;
+}
+.hidden-footer p{
+  font-family: var(--font-script);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hidden-footer p:last-of-type{ margin-bottom: 1.4rem; }
+.hidden-footer p.is-visible{ opacity: 1; }
+
+.hidden-footer .btn-gold{
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+.hidden-footer .btn-gold.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+}
